@@ -2,8 +2,10 @@
  * Created by Karina on 22.04.2018.
  */
 "use strict";
-let arrCompanyPartners = [];
-let sortedPartnersValue = [];
+let arrCompanyPartners,
+    companiesArr,
+    countries,
+    sortedPartnersValue = [];
 
 const SortingTypes = {
     VALUE_UP: 'VALUE_UP',
@@ -14,6 +16,7 @@ const SortingTypes = {
 
 let sortingType = SortingTypes.VALUE_DOWN;
 /*
+//for graphic
  google.charts.load('current', {packages: ['corechart']});
  google.charts.setOnLoadCallback(drawChart);
 
@@ -21,12 +24,7 @@ let sortingType = SortingTypes.VALUE_DOWN;
  function drawChart() {
 
  let data = google.visualization.arrayToDataTable([
- ['Task', 'Hours pe Day'],
- ['Work', 0],
- ['Eat', 50],
- ['Commute', 0],
- ['Watch TV', 0],
- ['Sleep', 50]
+ ['Company', 'Location'],
  ]);
 
  let options = {
@@ -38,7 +36,6 @@ let sortingType = SortingTypes.VALUE_DOWN;
  chart.draw(data, options);
  }
  */
-let companiesArr = [];
 
 function hideLoader() {
     $(".preloader").hide();
@@ -49,10 +46,8 @@ const asyncHider = () => {
     const timer = setTimeout(() => {
         hideLoader();
         clearTimeout(timer)
-    }, 1)
+    }, 1000)
 };
-
-let countries = [];
 
 function parseCompany(companiesArr) {
     companiesArr.forEach((company) => {
@@ -61,21 +56,17 @@ function parseCompany(companiesArr) {
         }
     });
 }
-let companies = [];
-function arrAllCompanies(arrCompanies) {
-    arrCompanies.forEach((company) => {
-        companies.push(company.name);
-    });
-    for (let i = 0; i <= companies.length - 1; i++) {
-        let a = $("<a class='each-companies' href='#'></a>");
-        a.append(companies[i]);
-        $(".list-all-companies").after(a);
 
-    }
+function createAllCompaniesBlock(arrCompanies) {
+    arrCompanies.forEach(company=>{
+        let link = $("<a class='each-companies' href='#'></a>");
+        link.append(company.name);
+        $(".list-all-companies").after(link);
+    });
+    
     $(".each-companies").on("click", function () {
         showCompanyPartners(this);
     })
-    // showCompanyPartners();
 }
 
 function changeSortingType(type) {
@@ -96,7 +87,6 @@ function getSortedArr(arr, sortType) {
 function constructorPartnersBlock() {
     $(".partner").remove();
     getSortedArr(arrCompanyPartners, sortingType).forEach(item => {
-        console.log(item)
         const companyPartner = $("<div class='partner'></div>");
         $(".list-partner").after(companyPartner);
         companyPartner.append(`${item.name} - ${item.value}%`);
@@ -126,9 +116,9 @@ function getCompanies() {
             url: "http://codeit.pro/codeitCandidates/serverFrontendTest/company/getList",
             success: res => {
                 companiesArr = res.list;
-                parseCompany(companiesArr);
+                // parseCompany(companiesArr);
                 asyncHider();
-                arrAllCompanies(res.list);
+                createAllCompaniesBlock(res.list);
                 const countOfCompanies = res.list.length;
                 $("#circle-all-companies").html(countOfCompanies);
 
@@ -164,11 +154,13 @@ function addEventListenerForArrows() {
         })
     })
 }
+
 function getNews() {
     $.ajax({
             type: "Get",
             url: "http://codeit.pro/codeitCandidates/serverFrontendTest/news/getList",
             success: res => {
+                console.log(res)
             }
         }
     )
