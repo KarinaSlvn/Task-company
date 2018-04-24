@@ -76,6 +76,56 @@
 .form-companies #piechart {
   width: 900px;
   height: 500px; }
+.form-companies .list-all-partners {
+  overflow-x: scroll;
+  overflow-y: hidden; }
+.form-companies .partner {
+  border: 1px solid rgba(36, 36, 36, 0.8);
+  font-size: 20px;
+  height: 87px;
+  width: 150px;
+  line-height: 45px;
+  transform: rotate(-90deg); }
+.form-companies .button-sort-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  float: right;
+  margin-top: -32px;
+  font-size: 18px;
+  margin-right: 5px;
+  border-radius: 20px; }
+.form-companies .button-sort-name a {
+  color: #000000;
+  text-decoration: none; }
+.form-companies .button-sort-name a:active {
+  text-decoration: none; }
+.form-companies .button-sort-name a:hover {
+  text-decoration: none; }
+.form-companies .button-sort-name a:visited {
+  text-decoration: none; }
+.form-companies .button-sort-value {
+  float: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin-top: -32px;
+  font-size: 18px; }
+.form-companies .button-sort-value a {
+  color: #000000;
+  text-decoration: none; }
+.form-companies .button-sort-value a:active {
+  text-decoration: none; }
+.form-companies .button-sort-value a:hover {
+  text-decoration: none; }
+.form-companies .button-sort-value a:visited {
+  text-decoration: none; }
+@media (min-width: 320px) {
+  .form-companies .partner {
+    margin: 15px;
+    border: none; } }
 
 .preloader {
   width: 100%;

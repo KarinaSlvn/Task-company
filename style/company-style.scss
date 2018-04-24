@@ -1,46 +1,46 @@
-.form-companies{
- .card-content{
-   margin: 10px;
-   height: 200px;
- }
-h3{
-  padding-left:10px;
-}
-.list-companies{
-  overflow-y: scroll;
-  overflow-x: hidden;
-  height: 200px;
-  position: relative;
-}
-#circle-all-companies{
-  display: flex;
-  width: 150px;
-  height: 150px;
-  border-radius: 100px;
-  border: 2px solid rgba(0, 0, 0, 0.65);
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 30px;
-}
-.row-card-companies{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.form-companies {
+  .card-content {
+    margin: 10px;
+    height: 200px;
+  }
+  h3 {
+    padding-left: 10px;
+  }
+  .list-companies {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 200px;
+    position: relative;
+  }
+  #circle-all-companies {
+    display: flex;
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    border: 2px solid rgba(0, 0, 0, 0.65);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+  }
+  .row-card-companies {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-}
-.input-group-company{
-   position: relative;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   text-align: center;
- }
-.company-partners{
-  display: none;
-  flex-direction: column;
-}
-  .each-companies{
+  }
+  .input-group-company {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .company-partners {
+    display: none;
+    flex-direction: column;
+  }
+  .each-companies {
     border: 1px solid rgba(36, 36, 36, 0.8);
     font-size: 20px;
     height: 45px;
@@ -48,25 +48,91 @@ h3{
     align-items: center;
     display: flex;
     padding-left: 10px;
-    color: rgba(0,0,0,0.8);
+    color: rgba(0, 0, 0, 0.8);
     text-decoration: none;
-    &:active{
+    &:active {
       background-color: #bfbfbf;
       text-decoration: none;
     }
-    &:hover{
+    &:hover {
       text-decoration: none;
       background-color: #bfbfbf;
     }
-    &:visited{
+    &:visited {
       text-decoration: none;
       background-color: #bfbfbf;
     }
 
   }
-
-  #piechart{
+  #piechart {
     width: 900px;
     height: 500px
   }
+  .list-all-partners {
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+
+  }
+  .partner {
+    border: 1px solid rgba(36, 36, 36, 0.8);
+    font-size: 20px;
+    height: 87px;
+    width: 150px;
+    line-height: 45px;
+    transform: rotate(-90deg);
+  }
+  .button-sort-name{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;;
+    align-items: flex-end;
+    float: right;
+    margin-top: -32px;
+    font-size: 18px;
+    margin-right: 5px;
+    border-radius: 20px;
+    a{
+      color: #000000;
+      text-decoration: none;
+      &:active {
+        text-decoration: none;
+      }
+      &:hover {
+        text-decoration: none;
+      }
+      &:visited {
+        text-decoration: none;
+      }
+    }
+  }
+  .button-sort-value{
+    float: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;;
+    align-items: flex-end;
+    margin-top: -32px;
+    font-size: 18px;
+    a{
+      color: #000000;
+      text-decoration: none;
+      &:active {
+        text-decoration: none;
+      }
+      &:hover {
+        text-decoration: none;
+      }
+      &:visited {
+        text-decoration: none;
+      }
+    }
+  }
+  @media (min-width: 320px) {
+   .partner{
+     margin: 15px;
+     border: none;
+    }
+  }
 }
+
