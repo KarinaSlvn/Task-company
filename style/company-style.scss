@@ -1,0 +1,72 @@
+.form-companies{
+ .card-content{
+   margin: 10px;
+   height: 200px;
+ }
+h3{
+  padding-left:10px;
+}
+.list-companies{
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 200px;
+  position: relative;
+}
+#circle-all-companies{
+  display: flex;
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+  border: 2px solid rgba(0, 0, 0, 0.65);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+.row-card-companies{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.input-group-company{
+   position: relative;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+ }
+.company-partners{
+  display: none;
+  flex-direction: column;
+}
+  .each-companies{
+    border: 1px solid rgba(36, 36, 36, 0.8);
+    font-size: 20px;
+    height: 45px;
+    line-height: 45px;
+    align-items: center;
+    display: flex;
+    padding-left: 10px;
+    color: rgba(0,0,0,0.8);
+    text-decoration: none;
+    &:active{
+      background-color: #bfbfbf;
+      text-decoration: none;
+    }
+    &:hover{
+      text-decoration: none;
+      background-color: #bfbfbf;
+    }
+    &:visited{
+      text-decoration: none;
+      background-color: #bfbfbf;
+    }
+
+  }
+
+  #piechart{
+    width: 900px;
+    height: 500px
+  }
+}

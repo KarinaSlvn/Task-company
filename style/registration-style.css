@@ -1,0 +1,24 @@
+.blank {
+  border: 2px solid rgba(99, 99, 99, 0.11);
+  margin-top: 20px;
+  border-radius: 5px;
+  padding-bottom: 50px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.13); }
+
+.headBlank {
+  background-color: rgba(99, 99, 99, 0.11);
+  margin: -20px -15px 0 -15px;
+  border-radius: 4px 4px 0 0; }
+
+.input-group {
+  margin: 15px 0 15px 0; }
+
+.btn {
+  float: right;
+  width: 100px; }
+.btn:active {
+  outline: none !important; }
+.btn:focus {
+  outline: none !important; }
+
+/*# sourceMappingURL=registration-style.css.map */

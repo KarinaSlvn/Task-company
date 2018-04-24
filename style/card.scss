@@ -1,0 +1,17 @@
+.card {
+  border: 2px solid $mainColor;
+  margin-top: 20px;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.13);
+
+  .card-header {
+    background-color: $mainColor;
+    h3 {
+      margin: 0;
+    }
+  }
+
+  .card-content, .card-footer, .card-footer {
+    padding: 0 15px;
+  }
+}

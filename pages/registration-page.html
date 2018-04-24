@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../image/icon.png" type="image/png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <script type="text/javascript" src="../script/jquery-3.3.1.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../style/all-style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <title>Task</title>
+    <script src="../script/registration-script.js"></script>
+</head>
+<body>
+<form name="registration" id="form_post" method="post" class="registration-form">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="card">
+                <div class="card-header">
+                    <h3 class="text-center">Sign up</h3>
+                </div>
+                <div class="card-content">
+                    <div class="input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                        <input type="text" class="form-control" title="используйте буквы латинского алфавита"
+                               placeholder="Username" id="username" required="required">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                        <input type="text" class="form-control" pattern="[A-Z][a-z].{3,60}$"
+                               placeholder="User second name"
+                               title="используйте буквы латинского алфавита" id="usersecondname" required="required">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+                        <input type="email" pattern="^[-._a-z0-9]+@(?:[a-z0-9][-a-z0-9]+\.)+[a-z]{2,6}$"
+                               class="form-control" placeholder="E-mail" id="email" required="required">
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" id="sex" required>
+                            <option name="sex" value="male">Male</option>
+                            <option name="sex" value="female">Female</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                        <input type="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=(.*[a-zA-Z]){4}).{8,20}$"
+                               title="минимальная длина пароля 8 символов, максимальная длина 20 символов, поле должно
+                       содержать латиницу нижний и верхний регистр, не менее 4 букв + спецсимволы."
+                               class="form-control" placeholder="Password" id="password" required="required">
+                    </div>
+                    <div class="input-group">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" value="agreement" id="choose" required="required">Conditions and
+                            Agreement
+                        </label>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="input-group">
+                        <input class="btn" type="submit" value="Send">
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+</html>

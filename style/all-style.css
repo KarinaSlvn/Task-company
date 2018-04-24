@@ -1,0 +1,145 @@
+.card {
+  border: 2px solid rgba(99, 99, 99, 0.11);
+  margin-top: 20px;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.13); }
+.card .card-header {
+  background-color: rgba(99, 99, 99, 0.11); }
+.card .card-header h3 {
+  margin: 0; }
+.card .card-content, .card .card-footer, .card .card-footer {
+  padding: 0 15px; }
+
+.registration-form .input-group {
+  margin: 15px 0 15px 0;
+  width: 100%; }
+.registration-form .btn {
+  float: right;
+  width: 100px; }
+.registration-form .btn:active {
+  outline: none !important; }
+.registration-form .btn:focus {
+  outline: none !important; }
+
+.form-companies .card-content {
+  margin: 10px;
+  height: 200px; }
+.form-companies h3 {
+  padding-left: 10px; }
+.form-companies .list-companies {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 200px;
+  position: relative; }
+.form-companies #circle-all-companies {
+  display: flex;
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+  border: 2px solid rgba(0, 0, 0, 0.65);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px; }
+.form-companies .row-card-companies {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+.form-companies .input-group-company {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; }
+.form-companies .company-partners {
+  display: none;
+  flex-direction: column; }
+.form-companies .each-companies {
+  border: 1px solid rgba(36, 36, 36, 0.8);
+  font-size: 20px;
+  height: 45px;
+  line-height: 45px;
+  align-items: center;
+  display: flex;
+  padding-left: 10px;
+  color: rgba(0, 0, 0, 0.8);
+  text-decoration: none; }
+.form-companies .each-companies:active {
+  background-color: #bfbfbf;
+  text-decoration: none; }
+.form-companies .each-companies:hover {
+  text-decoration: none;
+  background-color: #bfbfbf; }
+.form-companies .each-companies:visited {
+  text-decoration: none;
+  background-color: #bfbfbf; }
+.form-companies #piechart {
+  width: 900px;
+  height: 500px; }
+
+.preloader {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  background-color: white; }
+
+.loader {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #242424;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite; }
+
+.loader:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: rgba(0, 0, 0, 0.55);
+  -webkit-animation: spin 3s linear infinite;
+  animation: spin 3s linear infinite; }
+
+.loader:after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: rgba(4, 4, 4, 0.29);
+  -webkit-animation: spin 1.5s linear infinite;
+  animation: spin 1.5s linear infinite; }
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+/*# sourceMappingURL=all-style.css.map */

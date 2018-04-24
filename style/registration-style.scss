@@ -1,0 +1,18 @@
+.registration-form {
+  .card {
+  }
+  .input-group {
+    margin: 15px 0 15px 0;
+    width: 100%;
+  }
+  .btn {
+    float: right;
+    width: 100px;
+    &:active {
+      outline: none !important;
+    }
+    &:focus {
+      outline: none !important;
+    }
+  }
+}
