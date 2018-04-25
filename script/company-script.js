@@ -155,12 +155,48 @@ function addEventListenerForArrows() {
     })
 }
 
+function showImage(adress){
+    $(".first-img").attr('src',adress[0].img);
+}
+
+function showTitleNews(address) {
+    $(".title-first").attr('href',address[0].link);
+}
+function showDescriptionNews(adress) {
+    let arrDeskription = [];
+        arrDeskription= adress[0].description.split('');
+    if(arrDeskription.length>50){
+        let shortArr;
+        arrDeskription.length=50;
+        shortArr = arrDeskription;
+
+        $(".description-news").html(shortArr.join('') + "...");
+    }
+    else $(".description-news").html(arrDeskription);
+
+}
+
+function showAuthor(adress) {
+    $(".author").html("Author:" + adress[0].author);
+
+}
+function showPublic(adress) {
+    let datePublick = moment.unix(adress[0].date).format("DD.MM.YYYY");
+    $(".public").html("Public:"+ datePublick);
+
+
+}
 function getNews() {
     $.ajax({
             type: "Get",
             url: "http://codeit.pro/codeitCandidates/serverFrontendTest/news/getList",
             success: res => {
                 console.log(res)
+                showImage(res.list);
+                showTitleNews(res.list);
+                showDescriptionNews(res.list);
+                showAuthor(res.list);
+                showPublic(res.list);
             }
         }
     )

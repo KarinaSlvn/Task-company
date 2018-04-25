@@ -24,13 +24,31 @@
 .form-companies .card-content {
   margin: 10px;
   height: 200px; }
+.form-companies img {
+  max-width: 100%; }
 .form-companies h3 {
   padding-left: 10px; }
+.form-companies h4 {
+  color: black; }
 .form-companies .list-companies {
   overflow-y: scroll;
   overflow-x: hidden;
   height: 200px;
   position: relative; }
+.form-companies .slider-news {
+  position: relative;
+  height: 200px; }
+.form-companies .content-first-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: self-start;
+  text-align: start; }
+.form-companies .slider-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: self-start; }
 .form-companies #circle-all-companies {
   display: flex;
   width: 150px;
@@ -54,6 +72,14 @@
 .form-companies .company-partners {
   display: none;
   flex-direction: column; }
+.form-companies .diagram {
+  position: relative;
+  height: 200px; }
+@media (max-width: 768px) {
+  .form-companies .diagram {
+    height: 175px; }
+  .form-companies .first-img {
+    margin-top: 20px; } }
 .form-companies .each-companies {
   border: 1px solid rgba(36, 36, 36, 0.8);
   font-size: 20px;
@@ -80,11 +106,18 @@
   overflow-x: scroll;
   overflow-y: hidden; }
 .form-companies .partner {
-  border: 1px solid rgba(36, 36, 36, 0.8);
-  font-size: 20px;
-  height: 87px;
-  width: 150px;
-  line-height: 45px;
+  border: 2px solid #bfbfbf;
+  width: 100%;
+  margin: 5px;
+  border-radius: 12px;
+  font-size: 16px;
+  margin: 5px;
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.16); }
+.form-companies .content-partners {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   transform: rotate(-90deg); }
 .form-companies .button-sort-name {
   display: flex;
@@ -95,7 +128,8 @@
   margin-top: -32px;
   font-size: 18px;
   margin-right: 5px;
-  border-radius: 20px; }
+  border-radius: 20px;
+  margin-right: 2px; }
 .form-companies .button-sort-name a {
   color: #000000;
   text-decoration: none; }
@@ -112,6 +146,7 @@
   justify-content: flex-start;
   align-items: flex-end;
   margin-top: -32px;
+  margin-right: 2px;
   font-size: 18px; }
 .form-companies .button-sort-value a {
   color: #000000;
@@ -122,10 +157,6 @@
   text-decoration: none; }
 .form-companies .button-sort-value a:visited {
   text-decoration: none; }
-@media (min-width: 320px) {
-  .form-companies .partner {
-    margin: 15px;
-    border: none; } }
 
 .preloader {
   width: 100%;

@@ -46,20 +46,21 @@
                     <h3>Company partners</h3>
                     <div class="button-sort-name">
                         <p></p>
-                        <a href="#" class="sort-name-up">↑</a>
-                        <a href="#" class="sort-name-down">↓</a>
+                        <a href="#" class="sort-name-up"><i class="fas fa-caret-square-up"></i></a>
+                        <a href="#" class="sort-name-down"><i class="fas fa-caret-square-down"></i></a>
                     </div>
                     <div class="button-sort-value">
                         <p></p>
-                        <a href="#" class="sort-value-up">↑</a>
-                        <a href="#" class="sort-value-down">↓</a>
+                        <a href="#" class="sort-value-up"><i class="fas fa-caret-square-up"></i></a>
+                        <a href="#" class="sort-value-down"><i class="fas fa-caret-square-down"></i></a>
                     </div>
 
 
                 </div>
                 <div class="card-content input-group-company list-all-partners">
+                    <div class="content-partners">
                     <i class="list-partner"></i>
-
+                    </div>
                 </div>
             </div>
         </div>
@@ -70,7 +71,7 @@
                 <div class="card-header">
                     <h3>Companies by Location </h3>
                 </div>
-                <div class="card-content input-group-company">
+                <div class="card-content input-group-company diagram">
                     <div class="preloader">
                         <div class="loader"></div>
                     </div>
@@ -83,30 +84,29 @@
                 <div class="card-header">
                     <h3>News</h3>
                 </div>
-                <div class="card-content input-group-company">
+                <div class="card-content input-group-company slider-news">
+                    <div class="preloader">
+                        <div class="loader"></div>
+                    </div>
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
-                            <div class="item active">
+                            <div class="item active first-slide">
+                                <div class="slid-content">
                                 <div class="row featurette">
-                                    <div class="col-xs-6 col-sm-3">
-                                        <img src="" alt="">
+                                    <div class="col-xs-6">
+                                        <img class="first-img">
                                     </div>
-                                    <div class="col-xs-12 col-sm-9">
-                                        <a href="#"><h4 class="title-first"></h4></a>
-                                        <p class=""></p>
+                                    <div class="col-xs-6 content-first-slide">
+                                        <a class="title-first" ><h4>Title</h4></a>
+                                        <p class="description-news"></p>
                                     </div>
                                 </div>
                                 <div class="slider-footer">
-                                    <p>Author:
-                                        <i></i>
-                                    </p>
-                                    <p>
-                                        Public:
-                                        <i></i>
-                                    </p>
+                                    <p class="author"></p>
+                                    <p class="public"></p>
                                 </div>
                             </div>
-                            <div class="item">
+                           <!-- <div class="item">
                                 <div class="row featurette">
                                     <div class="col-xs-6 col-sm-3">
                                         <img src="" alt="">
@@ -146,15 +146,12 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
-                        <ol class="carousel-indicators">
+                        </div>-->
+                      <!--  <ol class="carousel-indicators">
                             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                             <li data-target="#myCarousel" data-slide-to="1"></li>
                             <li data-target="#myCarousel" data-slide-to="2"></li>
-                        </ol>
-                    </div>
-                    <div class="preloader">
-                        <div class="loader"></div>
+                        </ol>-->
                     </div>
                 </div>
             </div>
