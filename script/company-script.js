@@ -15,28 +15,36 @@ const SortingTypes = {
 };
 
 let sortingType = SortingTypes.VALUE_DOWN;
-/*
-//for graphic
- google.charts.load('current', {packages: ['corechart']});
- google.charts.setOnLoadCallback(drawChart);
-
-
- function drawChart() {
-
- let data = google.visualization.arrayToDataTable([
- ['Company', 'Location'],
- ]);
-
- let options = {
- title: ''
- };
-
- let chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
- chart.draw(data, options);
- }
- */
-
+function parseCompany(companiesArr) {
+    companiesArr.forEach((company) => {
+        if (countries.every(country => company.location.name)) {
+            countries.push(company.location.name)
+        }
+    });
+}
+//diagram
+function showDiagram(dataCountry) {
+    let arrCountry = [];
+    let countCountry;
+    for(let i=0; i<=dataCountry.length-1;i++){
+        arrCountry.push(dataCountry[i].location.name);
+        countCountry = _.countBy(arrCountry, _.uniq);
+    }
+    arrCountry = _.sortBy(arrCountry);
+    console.log(arrCountry);
+    console.log(countCountry);
+    let data = {
+        series: [5, 3, 4, 2, 1, 2]
+    };
+    let sum = function (a, b) {
+        return a + b
+    };
+    new Chartist.Pie('.diagram', data, {
+        labelInterpolationFnc: function (value) {
+            return Math.round(value / data.series.reduce(sum) * 100) + '%';
+        }
+    });
+}
 function hideLoader() {
     $(".preloader").hide();
 }
@@ -48,14 +56,6 @@ const asyncHider = () => {
         clearTimeout(timer)
     }, 1000)
 };
-
-function parseCompany(companiesArr) {
-    companiesArr.forEach((company) => {
-        if (countries.every(country => company.location.name !== country)) {
-            countries.push(company.location.name)
-        }
-    });
-}
 
 function createAllCompaniesBlock(arrCompanies) {
     arrCompanies.forEach(company=>{
@@ -115,10 +115,12 @@ function getCompanies() {
             type: "Get",
             url: "http://codeit.pro/codeitCandidates/serverFrontendTest/company/getList",
             success: res => {
+                console.log(res)
                 companiesArr = res.list;
                 // parseCompany(companiesArr);
                 asyncHider();
                 createAllCompaniesBlock(res.list);
+                showDiagram(res.list);
                 const countOfCompanies = res.list.length;
                 $("#circle-all-companies").html(countOfCompanies);
 
@@ -191,7 +193,6 @@ function getNews() {
             type: "Get",
             url: "http://codeit.pro/codeitCandidates/serverFrontendTest/news/getList",
             success: res => {
-                console.log(res)
                 showImage(res.list);
                 showTitleNews(res.list);
                 showDescriptionNews(res.list);
