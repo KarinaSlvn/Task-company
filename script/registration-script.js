@@ -5,11 +5,11 @@
 $(document).ready(() => {
     $("#form_post").submit( e => {
         e.preventDefault();
-        let name = $("input#username").val();
-        let secondname = $("input#usersecondname").val();
-        let email = $("input#email").val();
-        let gender = $("select#sex").val();
-        let pass = $("input#password").val();
+        let name = $("input.username").val();
+        let secondname = $("input.usersecondname").val();
+        let email = $("input.email").val();
+        let gender = $("select.sex").val();
+        let pass = $("input.password").val();
         let data = {
             name: name,
             secondname: secondname,
@@ -27,6 +27,7 @@ $(document).ready(() => {
                 if (res.status === 'OK') window.location.href = 'company-page.html';
                 else{
                     switch (res.message){
+                        case "Field 'secondname' should contain from 3 to 60 letters":alert("Secondname should contain from 3 to 60 letters"); break ;
                         case 'Creating user error. Email already exists.':alert('Email already exists!'); break ;
                         case 'Wrong route':alert('Wrong route');break
                     }

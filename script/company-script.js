@@ -26,24 +26,19 @@ function parseCompany(companiesArr) {
 function showDiagram(dataCountry) {
     let arrCountry = [];
     let countCountry;
-    for(let i=0; i<=dataCountry.length-1;i++){
+    for (let i = 0; i <= dataCountry.length - 1; i++) {
         arrCountry.push(dataCountry[i].location.name);
         countCountry = _.countBy(arrCountry, _.uniq);
     }
     arrCountry = _.sortBy(arrCountry);
-    console.log(arrCountry);
-    console.log(countCountry);
-    let data = {
+    const data = {
         series: [5, 3, 4, 2, 1, 2]
     };
-    let sum = function (a, b) {
-        return a + b
-    };
+    const sum = (a, b)=> a + b;
     new Chartist.Pie('.diagram', data, {
-        labelInterpolationFnc: function (value) {
-            return Math.round(value / data.series.reduce(sum) * 100) + '%';
+            labelInterpolationFnc: value => Math.round(value / data.series.reduce(sum) * 100) + '%'
         }
-    });
+    );
 }
 function hideLoader() {
     $(".preloader").hide();
@@ -58,12 +53,11 @@ const asyncHider = () => {
 };
 
 function createAllCompaniesBlock(arrCompanies) {
-    arrCompanies.forEach(company=>{
-        let link = $("<a class='each-companies' href='#'></a>");
+    arrCompanies.forEach((company, i) => {
+        const link = $("<a class='each-companies' href='#'></a>").attr("data-id", i);
         link.append(company.name);
         $(".list-all-companies").after(link);
     });
-    
     $(".each-companies").on("click", function () {
         showCompanyPartners(this);
     })
@@ -92,17 +86,15 @@ function constructorPartnersBlock() {
         companyPartner.append(`${item.name} - ${item.value}%`);
     })
 }
-
 function getCompanyPartners(_this) {
-    $(".company-partners").css("display", "flex");
-    const companyName = $(_this).text();
-    arrCompanyPartners = getPartnersInPercentage(_.find(companiesArr, ['name', companyName]).partners);
+    $(".company-partners").addClass("company-partners-display");
+    const partners = companiesArr[$(_this).attr("data-id")].partners;
+    arrCompanyPartners = getPartnersInPercentage(partners);
 }
+
 function getPartnersInPercentage(arr) {
     const sumValue = _.sumBy(arr, 'value')
-    return arr.map(item => {
-        return {'name': item.name, 'value': Number((item.value / sumValue * 100).toFixed(1))}
-    })
+    return arr.map(item => ({'name': item.name, 'value': Number((item.value / sumValue * 100).toFixed(1))}))
 }
 
 function showCompanyPartners(_this) {
@@ -157,19 +149,19 @@ function addEventListenerForArrows() {
     })
 }
 
-function showImage(adress){
-    $(".first-img").attr('src',adress[0].img);
+function showImage(adress) {
+    $(".first-img").attr('src', adress[0].img);
 }
 
 function showTitleNews(address) {
-    $(".title-first").attr('href',address[0].link);
+    $(".title-first").attr('href', address[0].link);
 }
 function showDescriptionNews(adress) {
     let arrDeskription = [];
-        arrDeskription= adress[0].description.split('');
-    if(arrDeskription.length>50){
+    arrDeskription = adress[0].description.split('');
+    if (arrDeskription.length > 50) {
         let shortArr;
-        arrDeskription.length=50;
+        arrDeskription.length = 50;
         shortArr = arrDeskription;
 
         $(".description-news").html(shortArr.join('') + "...");
@@ -184,7 +176,7 @@ function showAuthor(adress) {
 }
 function showPublic(adress) {
     let datePublick = moment.unix(adress[0].date).format("DD.MM.YYYY");
-    $(".public").html("Public:"+ datePublick);
+    $(".public").html("Public:" + datePublick);
 
 
 }

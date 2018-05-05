@@ -63,6 +63,9 @@
     display: none;
     flex-direction: column;
   }
+  .company-partners-display{
+    display: flex !important;
+  }
   .diagram{
     position: relative;
     height: 200px;

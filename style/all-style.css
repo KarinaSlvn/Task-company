@@ -72,6 +72,8 @@
 .form-companies .company-partners {
   display: none;
   flex-direction: column; }
+.form-companies .company-partners-display {
+  display: flex !important; }
 .form-companies .diagram {
   position: relative;
   height: 200px; }
